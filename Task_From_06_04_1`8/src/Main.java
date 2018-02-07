@@ -21,18 +21,23 @@ public class Main {
         }
 
         //заполнение второй половины без побочной диагонали
-        for (int k = n - 1; k > 0; --k) {
-            for (int i = n-k; i < n; ++i) {
-                //if (k%2!=0)
-                    matrix[i][k] = h;
-                //else
-                  //  matrix[i][k] = h;
-                ++h;
-            }
-        }
+//        for (int k = n - 1; k > 0; --k) {
+//            for (int i = n-k; i < n; ++i) {
+//                //if (k%2!=0)
+//                    matrix[k+1-i][i] = h;
+//                    print(matrix);
+//                //else
+//                  //  matrix[i][k] = h;
+//                ++h;
+//            }
+//        }
 
-        for (int i = 0; i < n; ++i) {
-            for (int j = 0; j < n; ++j) {
+        print(matrix);
+    }
+
+    public static void print(int matrix[][]) {
+        for (int i = 0; i < matrix.length; ++i) {
+            for (int j = 0; j < matrix.length; ++j) {
                 System.out.print(matrix[i][j] + " | ");
             }
             System.out.println();
