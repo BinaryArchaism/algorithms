@@ -21,16 +21,15 @@ public class Main {
         }
 
         //заполнение второй половины без побочной диагонали
-//        for (int k = n - 1; k > 0; --k) {
-//            for (int i = n-k; i < n; ++i) {
-//                //if (k%2!=0)
-//                    matrix[k+1-i][i] = h;
-//                    print(matrix);
-//                //else
-//                  //  matrix[i][k] = h;
-//                ++h;
-//            }
-//        }
+        for (int k = n - 1; k > 0; --k) {
+            for (int i = n-k; i < n; ++i) {
+                //if (k%2!=0)
+                    matrix[n-i][i] = h;
+                //else
+                  //  matrix[i][k] = h;
+                ++h;
+            }
+        }
 
         print(matrix);
     }
