@@ -22,23 +22,11 @@ public class Main {
 
         //заполнение второй половины без побочной диагонали
         for (int k = 1; k < n; ++k) {
-            for (int i = n-k; i > 0; --i) {
-                    matrix[n-k][n-k] = h;
+            for (int i = n-1; i > n-i+k-1; --i) {
+                matrix[i][n-i+k-1] = h;                 //[][ошибка]
                 ++h;
             }
         }
-
-        
-
-
-//        int i = n-1;
-//        while (i > n-i) {
-//            for (int k = n-i; k < n; ++k) {
-//                matrix[i][k] = h;
-//                ++h;
-//                --i;
-//            }
-//        }
 
         print(matrix);
     }
