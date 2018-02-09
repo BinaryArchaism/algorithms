@@ -23,10 +23,10 @@ public class Main {
         //заполнение второй половины без побочной диагонали
 
         for (int k = n - 1; k > 0; --k) {
-            for (int i = n-k; i > 0; --i) {
+            for (int i = n-k; i <= k; ++i) {
                 //меняй местами [][], чтобы изменить направление заполнения
                 //if (k%2!=0)
-                    matrix[i][] = h;
+                    matrix[k-i+1][i] = h;       //[good][ERROR]
                 //else
                 //    matrix[n-k-i][i] = h;
                 ++h;
