@@ -7,28 +7,29 @@ public class Main {
 
         int n = 6; //размер матрицы
         int matrix[][] = new int[n][n];
-        int h = 1;
+        int h = 2;
 
-        for (int k = 0; k < n; ++k) {
+        matrix[0][0] = 1;
+        for (int k = 1; k < n; ++k) {
             if (k%2 != 0) {
-                for (int i = 0; i <= k; ++i) {
+                for (int i = 0; i < k; ++i) {
                     matrix[i][k] = h;
                     ++h;
                 }
                 matrix[k][k] = h;
                 ++h;
-                for (int i = 0; i <= k; ++i) {
+                for (int i = 0; i < k; ++i) {
                     matrix[k][i] = h;
                     ++h;
                 }
             } else {
-                for (int i = 0; i <= k; ++i) {
+                for (int i = 0; i < k; ++i) {
                     matrix[k][i] = h;
                     ++h;
                 }
                 matrix[k][k] = h;
                 ++h;
-                for (int i = 0; i <= k; ++i) {
+                for (int i = 0; i < k; ++i) {
                     matrix[i][k] = h;
                     ++h;
                 }
