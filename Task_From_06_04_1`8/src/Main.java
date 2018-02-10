@@ -8,7 +8,7 @@ public class Main {
         int matrix[][] = new int[n][n];
 
         int h = 1;
-        
+
         //заполнение первой половины + побочной диагонали
         for (int k = n - 1; k >= 0; --k) {
             for (int i = n-k-1; i >= 0; --i) {
