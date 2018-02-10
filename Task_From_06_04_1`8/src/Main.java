@@ -8,6 +8,7 @@ public class Main {
         int matrix[][] = new int[n][n];
 
         int h = 1;
+        
         //заполнение первой половины + побочной диагонали
         for (int k = n - 1; k >= 0; --k) {
             for (int i = n-k-1; i >= 0; --i) {
@@ -21,32 +22,16 @@ public class Main {
         }
 
         //заполнение второй половины без побочной диагонали
-
-        for (int k = n - 1; k > 0; --k) {
-            for (int i = n-k; i <= k; ++i) {
+        for (int k = n; k < 2 * n - 1; ++k) {
+            for (int i = k - n + 1; i < n ; ++i) {
                 //меняй местами [][], чтобы изменить направление заполнения
-                //if (k%2!=0)
-                    matrix[k-i+1][i] = h;       //[good][ERROR]
-                //else
-                //    matrix[n-k-i][i] = h;
+                if (k % 2 != 0)
+                    matrix[i][k-i] = h;
+                else
+                    matrix[k-i][i] = h;
                 ++h;
             }
         }
-
-//        for (int k = 1; k < n; ++k) {
-//            for (int i = n-1; i > n-i+k-1; --i) {
-//                matrix[i][i-n+k+1] = h;                 //[проблем нет][ошибка]
-//                ++h;
-//            }
-//        }
-
-//        int k = n-1;
-//
-//        for (int j = 1; j < n; ++j) {
-//            int i = n-k;
-//            matrix[k][i] = h;
-//            ++h; --k;
-//        }
 
         print(matrix);
     }
