@@ -18,7 +18,7 @@ public class Main {
                 }
                 matrix[k][k] = h;
                 ++h;
-                for (int i = 0; i < k; ++i) {
+                for (int i = k-1; i >= 0; --i) {    //error
                     matrix[k][i] = h;
                     ++h;
                 }
@@ -29,7 +29,7 @@ public class Main {
                 }
                 matrix[k][k] = h;
                 ++h;
-                for (int i = 0; i < k; ++i) {
+                for (int i = k-1; i >= 0; --i) {
                     matrix[i][k] = h;
                     ++h;
                 }
