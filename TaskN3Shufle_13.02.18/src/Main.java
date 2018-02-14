@@ -1,6 +1,6 @@
 public class Main {
     public static void main(String[] args) {
-        int n = 10; //количесвто элементов в массиве
+        int n = 50; //количесвто элементов в массиве
         int array[] = new int[n];
         int array1[] = new int[n];
         int array2[] = new int[n];
