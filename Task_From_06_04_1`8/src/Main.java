@@ -32,6 +32,15 @@ public class Main {
                 ++h;
             }
         }
+//        for (int k = 1; k<n; k++) {
+//            for (int i = n -k; i >= k; i--) {
+//                if (k % 2 != 0)
+//                    matrix[i][n-i+k-1] = h;
+//                else
+//                    matrix[n-i+k-1][i] = h;
+//                h++;
+//            }
+//        }
 
         print(matrix);
     }
