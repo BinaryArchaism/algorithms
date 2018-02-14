@@ -1,12 +1,12 @@
 public class Main {
     public static void main(String[] args) {
         int k = 4; // опорный элемент
-        int array[] = {13, 2, k, 6, 3}; // количество = 11
+        int array[] = {14,16, k, 1, 3}; // количество = 11
 
         print(array);
 
         for (int i = 0; i < array.length; i++) {
-            if (array[i] > k) {
+            if (array[i] < k) {
                 int j = array[i];
                 array[i] = array[array.length-1 - i];
                 array[array.length-1 - i] = j;
