@@ -2,17 +2,25 @@ public class Main {
     public static void main(String[] args) {
         int n = 10; //количесвто элементов в массиве
         int array[] = new int[n];
-        for (int i = 1; i <= n; i++) {  // заполнение массива от 1 до n
-            array[i-1] = i;
-        }
+        int array1[] = new int[n];
+        int array2[] = new int[n];
+        fillArray(array);
+        fillArray(array1);
+        fillArray(array2);
 
         print(array);
         shufle1(array);
         print(array);
-        shufle2(array);
-        print(array);
-        shufle3(array);
-        print(array);
+        System.out.println();
+
+        print(array1);
+        shufle2(array1);
+        print(array1);
+        System.out.println();
+
+        print(array2);
+        shufle3(array2);
+        print(array2);
     }
 
     public static void shufle1(int[] arr) {
@@ -57,5 +65,11 @@ public class Main {
             System.out.print(matrix[j] + " | ");
         }
         System.out.println();
+    }
+
+    public static void fillArray(int arr[]) {
+        for (int i = 1; i <= arr.length; i++) {
+            arr[i-1] = i;
+        }
     }
 }
