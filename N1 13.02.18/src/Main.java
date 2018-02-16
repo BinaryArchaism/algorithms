@@ -32,7 +32,7 @@ public class Main {
         for (int i = n-1; i > 0; i--)
             matrix[i][m-1] = matrix[i-1][m-1];
         matrix[0][m-1] = p;
-        for (int i = 0; i < n; i++) {  //ошибка далее
+        for (int i = 0; i < n; i++) {
             p = matrix[i][m-1];
             for (int k = m-1; k > 0; k--)
                 matrix[i][k] = matrix[i][k-1];
