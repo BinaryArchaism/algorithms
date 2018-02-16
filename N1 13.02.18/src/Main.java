@@ -6,17 +6,24 @@ public class Main {
         fill(matrix);
         print(matrix);
 
-        /** Алгоритм упорядоченного спуска */
-        int p = matrix[n-1][m-1];
-        for (int i = n-1; i >= 0; i--) {
-            for (int k = m-1; k > 0; k--)
-                matrix[i][k] = matrix[i][k-1];
-            if (i != 0) matrix[i][0] = matrix[i-1][m-1];
-        }
-        matrix[0][0] = p;
+        for (int turn = 0; turn < 3; turn++) {
 
-        System.out.println();
-        print(matrix);
+
+            /** Алгоритм упорядоченного спуска */
+            int p = matrix[n - 1][m - 1];
+            for (int i = n - 1; i >= 0; i--) {
+                for (int k = m - 1; k > 0; k--)
+                    matrix[i][k] = matrix[i][k - 1];
+                if (i != 0)
+                    matrix[i][0] = matrix[i - 1][m - 1];
+            }
+            matrix[0][0] = p;
+
+
+        }
+
+            System.out.println();
+            print(matrix);
     }
 
     public static void fill(int matrix[][]) {
