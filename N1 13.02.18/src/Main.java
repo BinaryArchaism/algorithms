@@ -6,24 +6,38 @@ public class Main {
         fill(matrix);
         print(matrix);
 
-        for (int turn = 0; turn < 3; turn++) {
+        firstWay(matrix);
+        print(matrix);
 
 
-            /** Алгоритм упорядоченного спуска */
-            int p = matrix[n - 1][m - 1];
-            for (int i = n - 1; i >= 0; i--) {
-                for (int k = m - 1; k > 0; k--)
-                    matrix[i][k] = matrix[i][k - 1];
-                if (i != 0)
-                    matrix[i][0] = matrix[i - 1][m - 1];
-            }
-            matrix[0][0] = p;
+        secondWay(matrix);
+        print(matrix);
+    }
 
-
+    public static void firstWay(int matrix[][]) {
+        /** Алгоритм упорядоченного спуска */
+        int p = matrix[n - 1][m - 1];
+        for (int i = n - 1; i >= 0; i--) {
+            for (int k = m - 1; k > 0; k--)
+                matrix[i][k] = matrix[i][k - 1];
+            if (i != 0)
+                matrix[i][0] = matrix[i - 1][m - 1];
         }
+        matrix[0][0] = p;
+    }
 
-            System.out.println();
-            print(matrix);
+    public static void secondWay(int matrix[][]) {
+        /** Алгоритм двойного сдвига */
+        int p = matrix[n-1][m-1];
+        for (int i = n-1; i > 0; i--)
+            matrix[i][m-1] = matrix[i-1][m-1];
+        matrix[0][m-1] = p;
+        for (int i = 0; i < n; i++) {  //ошибка далее
+            p = matrix[i][m-1];
+            for (int k = m-1; k > 0; k--)
+                matrix[i][k] = matrix[i][k-1];
+            matrix[i][0] = p;
+        }
     }
 
     public static void fill(int matrix[][]) {
@@ -34,6 +48,7 @@ public class Main {
         }
     }
     public static void print(int matrix[][]) {
+        System.out.println();
         for (int i = 0; i < n; ++i) {
             for (int j = 0; j < m; ++j) {
                 System.out.print(matrix[i][j] + " | ");
