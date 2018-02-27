@@ -12,9 +12,15 @@ public class Main {
     }
 
     public static void taskSecond(int[][] matrix) {
-        int turn = 0;
+        int n = matrix.length;
+        if (n%2!=0) n++;
+        int[] arr = new int[n];
+        for (int i = 0; i < matrix.length; i+=2) {
+            arr[i] = i/2+1;
+            arr[i+1] = i/2+1;
+        }
         for (int i = 0; i < matrix.length; i++) {
-            for (int p = 0; p <= turn/2; p++) {
+            for (int p = 1; p <= arr[i]; p++) {
                 if (i % 2 == 0) {
                     int j = matrix[matrix.length - 1][i];
                     for (int k = matrix.length - 2; k >= 0; k--) {
@@ -30,7 +36,6 @@ public class Main {
                     matrix[matrix.length - 1][i] = j;
                 }
             }
-            turn += 2;
         }
     }
 
