@@ -8,7 +8,6 @@ public class Main {
         taskSecond(matrix);
         print(matrix);
 
-
     }
 
     public static void taskSecond(int[][] matrix) {

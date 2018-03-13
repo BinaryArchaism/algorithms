@@ -2,25 +2,21 @@ public class Main {
     public static void main(String[] args) {
         int n = 50; //количесвто элементов в массиве
         int array[] = new int[n];
-        int array1[] = new int[n];
-        int array2[] = new int[n];
         fillArray(array);
-        fillArray(array1);
-        fillArray(array2);
-
         print(array);
-        shufle1(array);
+        shufle0(array);
         print(array);
-        System.out.println();
+    }
 
-        print(array1);
-        shufle2(array1);
-        print(array1);
-        System.out.println();
-
-        print(array2);
-        shufle3(array2);
-        print(array2);
+    public static void shufle0(int[] arr) {
+        int i = 0;
+        while (i < arr.length) {
+            int rand = (int) (i + Math.random() * (arr.length-i));
+            int t = arr[i];
+            arr[i] = arr[rand];
+            arr[rand] = t;
+            i++;
+        }
     }
 
     public static void shufle1(int[] arr) {
@@ -61,6 +57,7 @@ public class Main {
     }
 
     public static void print(int matrix[]) {
+        System.out.println();
         for (int j = 0; j < matrix.length; ++j) {
             System.out.print(matrix[j] + " | ");
         }
